@@ -1,0 +1,67 @@
+﻿@model InventoryFinal.Models.damaged_products
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>damaged_products</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.issue_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.issue_date)
+            @Html.ValidationMessageFor(model => model.issue_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.product_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.product_id)
+            @Html.ValidationMessageFor(model => model.product_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.quantity)
+            @Html.ValidationMessageFor(model => model.quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.warehouse_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.warehouse_id)
+            @Html.ValidationMessageFor(model => model.warehouse_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.damage_details)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.damage_details)
+            @Html.ValidationMessageFor(model => model.damage_details)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

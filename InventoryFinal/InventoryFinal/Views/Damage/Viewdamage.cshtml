@@ -1,0 +1,58 @@
+﻿@model IEnumerable<InventoryFinal.Models.damaged_products>
+
+@{
+    ViewBag.Title = "Viewdamage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Viewdamage</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.issue_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.product_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.warehouse_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.damage_details)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.issue_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.product_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.warehouse_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.damage_details)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

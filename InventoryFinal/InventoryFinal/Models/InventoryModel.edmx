@@ -1,0 +1,968 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="inventoryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="inventoryModelStoreContainer">
+          <EntitySet Name="bundle_lot" EntityType="inventoryModel.Store.bundle_lot" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="categories" EntityType="inventoryModel.Store.categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="customers" EntityType="inventoryModel.Store.customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="damaged_products" EntityType="inventoryModel.Store.damaged_products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="products" EntityType="inventoryModel.Store.products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="purchases" EntityType="inventoryModel.Store.purchases" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sales" EntityType="inventoryModel.Store.sales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="suppliers" EntityType="inventoryModel.Store.suppliers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tax" EntityType="inventoryModel.Store.tax" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="users" EntityType="inventoryModel.Store.users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="warehouses" EntityType="inventoryModel.Store.warehouses" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_categories_categories" Association="inventoryModel.Store.FK_categories_categories">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="categories1" EntitySet="categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_damaged_products_productsTable" Association="inventoryModel.Store.FK_damaged_products_productsTable">
+            <End Role="products" EntitySet="products" />
+            <End Role="damaged_products" EntitySet="damaged_products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_damaged_products_warehouse" Association="inventoryModel.Store.FK_damaged_products_warehouse">
+            <End Role="warehouses" EntitySet="warehouses" />
+            <End Role="damaged_products" EntitySet="damaged_products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_products_categories" Association="inventoryModel.Store.FK_products_categories">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_products_tax" Association="inventoryModel.Store.FK_products_tax">
+            <End Role="tax" EntitySet="tax" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_bundleTable" Association="inventoryModel.Store.FK_purchases_bundleTable">
+            <End Role="bundle_lot" EntitySet="bundle_lot" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_ProductTable" Association="inventoryModel.Store.FK_purchases_ProductTable">
+            <End Role="products" EntitySet="products" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_supplier" Association="inventoryModel.Store.FK_purchases_supplier">
+            <End Role="suppliers" EntitySet="suppliers" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_warehouse" Association="inventoryModel.Store.FK_purchases_warehouse">
+            <End Role="warehouses" EntitySet="warehouses" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_BudleTable" Association="inventoryModel.Store.FK_sales_BudleTable">
+            <End Role="bundle_lot" EntitySet="bundle_lot" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_CustomerTable" Association="inventoryModel.Store.FK_sales_CustomerTable">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_productsTable" Association="inventoryModel.Store.FK_sales_productsTable">
+            <End Role="products" EntitySet="products" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_TaxTable" Association="inventoryModel.Store.FK_sales_TaxTable">
+            <End Role="tax" EntitySet="tax" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_WarehouseTable" Association="inventoryModel.Store.FK_sales_WarehouseTable">
+            <End Role="warehouses" EntitySet="warehouses" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="bundle_lot">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="bundle_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="des" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="company" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="address" Type="text" Nullable="false" />
+          <Property Name="postal_code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="details" Type="text" />
+        </EntityType>
+        <EntityType Name="damaged_products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="issue_date" Type="datetime" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+          <Property Name="damage_details" Type="text" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="unit" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
+          <Property Name="cost" Type="float" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="alert_quantity" Type="int" Nullable="false" />
+          <Property Name="category_id" Type="int" Nullable="false" />
+          <Property Name="tax_id" Type="int" Nullable="false" />
+          <Property Name="details" Type="text" />
+          <Property Name="stock_quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="purchases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="supplier_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="cost" Type="float" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+          <Property Name="pur_date" Type="datetime" Nullable="false" />
+          <Property Name="bundle_id" Type="int" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sales">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+          <Property Name="tax_id" Type="int" Nullable="false" />
+          <Property Name="sell_date" Type="datetime" Nullable="false" />
+          <Property Name="bundle_id" Type="int" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="suppliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="company" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="adress" Type="text" Nullable="false" />
+          <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="postal_code" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="details" Type="text" />
+        </EntityType>
+        <EntityType Name="tax">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="rate" Type="float" Nullable="false" />
+          <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="tax_id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="firstname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="user_type" Type="int" Nullable="false" />
+          <Property Name="active" Type="int" Nullable="false" />
+          <Property Name="issue_date" Type="datetime" Nullable="false" />
+          <Property Name="Conformation_password" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="warehouses">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_categories_categories">
+          <End Role="categories" Type="inventoryModel.Store.categories" Multiplicity="1" />
+          <End Role="categories1" Type="inventoryModel.Store.categories" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="categories1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_damaged_products_productsTable">
+          <End Role="products" Type="inventoryModel.Store.products" Multiplicity="1" />
+          <End Role="damaged_products" Type="inventoryModel.Store.damaged_products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="damaged_products">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_damaged_products_warehouse">
+          <End Role="warehouses" Type="inventoryModel.Store.warehouses" Multiplicity="1" />
+          <End Role="damaged_products" Type="inventoryModel.Store.damaged_products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouses">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="damaged_products">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_products_categories">
+          <End Role="categories" Type="inventoryModel.Store.categories" Multiplicity="1" />
+          <End Role="products" Type="inventoryModel.Store.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_products_tax">
+          <End Role="tax" Type="inventoryModel.Store.tax" Multiplicity="1" />
+          <End Role="products" Type="inventoryModel.Store.products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tax">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="tax_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_bundleTable">
+          <End Role="bundle_lot" Type="inventoryModel.Store.bundle_lot" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.Store.purchases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bundle_lot">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="bundle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_ProductTable">
+          <End Role="products" Type="inventoryModel.Store.products" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.Store.purchases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_supplier">
+          <End Role="suppliers" Type="inventoryModel.Store.suppliers" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.Store.purchases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_warehouse">
+          <End Role="warehouses" Type="inventoryModel.Store.warehouses" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.Store.purchases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouses">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_BudleTable">
+          <End Role="bundle_lot" Type="inventoryModel.Store.bundle_lot" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.Store.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bundle_lot">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="bundle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_CustomerTable">
+          <End Role="customers" Type="inventoryModel.Store.customers" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.Store.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_productsTable">
+          <End Role="products" Type="inventoryModel.Store.products" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.Store.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_TaxTable">
+          <End Role="tax" Type="inventoryModel.Store.tax" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.Store.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tax">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="tax_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_WarehouseTable">
+          <End Role="warehouses" Type="inventoryModel.Store.warehouses" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.Store.sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouses">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="inventoryModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="InventoryDBContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="bundle_lot" EntityType="inventoryModel.bundle_lot" />
+          <EntitySet Name="categories" EntityType="inventoryModel.category" />
+          <EntitySet Name="customers" EntityType="inventoryModel.customer" />
+          <EntitySet Name="damaged_products" EntityType="inventoryModel.damaged_products" />
+          <EntitySet Name="products" EntityType="inventoryModel.product" />
+          <EntitySet Name="purchases" EntityType="inventoryModel.purchase" />
+          <EntitySet Name="sales" EntityType="inventoryModel.sale" />
+          <EntitySet Name="suppliers" EntityType="inventoryModel.supplier" />
+          <EntitySet Name="taxes" EntityType="inventoryModel.tax" />
+          <EntitySet Name="users" EntityType="inventoryModel.user" />
+          <EntitySet Name="warehouses" EntityType="inventoryModel.warehouse" />
+          <AssociationSet Name="FK_purchases_bundleTable" Association="inventoryModel.FK_purchases_bundleTable">
+            <End Role="bundle_lot" EntitySet="bundle_lot" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_BudleTable" Association="inventoryModel.FK_sales_BudleTable">
+            <End Role="bundle_lot" EntitySet="bundle_lot" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_categories_categories" Association="inventoryModel.FK_categories_categories">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="categories1" EntitySet="categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_products_categories" Association="inventoryModel.FK_products_categories">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_CustomerTable" Association="inventoryModel.FK_sales_CustomerTable">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_damaged_products_productsTable" Association="inventoryModel.FK_damaged_products_productsTable">
+            <End Role="products" EntitySet="products" />
+            <End Role="damaged_products" EntitySet="damaged_products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_damaged_products_warehouse" Association="inventoryModel.FK_damaged_products_warehouse">
+            <End Role="warehouses" EntitySet="warehouses" />
+            <End Role="damaged_products" EntitySet="damaged_products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_products_tax" Association="inventoryModel.FK_products_tax">
+            <End Role="tax" EntitySet="taxes" />
+            <End Role="products" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_ProductTable" Association="inventoryModel.FK_purchases_ProductTable">
+            <End Role="products" EntitySet="products" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_productsTable" Association="inventoryModel.FK_sales_productsTable">
+            <End Role="products" EntitySet="products" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_supplier" Association="inventoryModel.FK_purchases_supplier">
+            <End Role="suppliers" EntitySet="suppliers" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_purchases_warehouse" Association="inventoryModel.FK_purchases_warehouse">
+            <End Role="warehouses" EntitySet="warehouses" />
+            <End Role="purchases" EntitySet="purchases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_TaxTable" Association="inventoryModel.FK_sales_TaxTable">
+            <End Role="tax" EntitySet="taxes" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sales_WarehouseTable" Association="inventoryModel.FK_sales_WarehouseTable">
+            <End Role="warehouses" EntitySet="warehouses" />
+            <End Role="sales" EntitySet="sales" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="bundle_lot">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="bundle_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="des" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="purchases" Relationship="inventoryModel.FK_purchases_bundleTable" FromRole="bundle_lot" ToRole="purchases" />
+          <NavigationProperty Name="sales" Relationship="inventoryModel.FK_sales_BudleTable" FromRole="bundle_lot" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="categories1" Relationship="inventoryModel.FK_categories_categories" FromRole="categories" ToRole="categories1" />
+          <NavigationProperty Name="category1" Relationship="inventoryModel.FK_categories_categories" FromRole="categories1" ToRole="categories" />
+          <NavigationProperty Name="products" Relationship="inventoryModel.FK_products_categories" FromRole="categories" ToRole="products" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="company" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="postal_code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="details" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="sales" Relationship="inventoryModel.FK_sales_CustomerTable" FromRole="customers" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="damaged_products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="warehouse_id" Type="Int32" Nullable="false" />
+          <Property Name="damage_details" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="product" Relationship="inventoryModel.FK_damaged_products_productsTable" FromRole="damaged_products" ToRole="products" />
+          <NavigationProperty Name="warehouse" Relationship="inventoryModel.FK_damaged_products_warehouse" FromRole="damaged_products" ToRole="warehouses" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="unit" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="size" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="cost" Type="Double" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="alert_quantity" Type="Int32" Nullable="false" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="tax_id" Type="Int32" Nullable="false" />
+          <Property Name="details" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="stock_quantity" Type="Int32" />
+          <NavigationProperty Name="category" Relationship="inventoryModel.FK_products_categories" FromRole="products" ToRole="categories" />
+          <NavigationProperty Name="damaged_products" Relationship="inventoryModel.FK_damaged_products_productsTable" FromRole="products" ToRole="damaged_products" />
+          <NavigationProperty Name="tax" Relationship="inventoryModel.FK_products_tax" FromRole="products" ToRole="tax" />
+          <NavigationProperty Name="purchases" Relationship="inventoryModel.FK_purchases_ProductTable" FromRole="products" ToRole="purchases" />
+          <NavigationProperty Name="sales" Relationship="inventoryModel.FK_sales_productsTable" FromRole="products" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="purchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="supplier_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="cost" Type="Double" Nullable="false" />
+          <Property Name="total" Type="Double" Nullable="false" />
+          <Property Name="pur_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="bundle_id" Type="Int32" Nullable="false" />
+          <Property Name="warehouse_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bundle_lot" Relationship="inventoryModel.FK_purchases_bundleTable" FromRole="purchases" ToRole="bundle_lot" />
+          <NavigationProperty Name="product" Relationship="inventoryModel.FK_purchases_ProductTable" FromRole="purchases" ToRole="products" />
+          <NavigationProperty Name="supplier" Relationship="inventoryModel.FK_purchases_supplier" FromRole="purchases" ToRole="suppliers" />
+          <NavigationProperty Name="warehouse" Relationship="inventoryModel.FK_purchases_warehouse" FromRole="purchases" ToRole="warehouses" />
+        </EntityType>
+        <EntityType Name="sale">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="total" Type="Double" Nullable="false" />
+          <Property Name="tax_id" Type="Int32" Nullable="false" />
+          <Property Name="sell_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="bundle_id" Type="Int32" Nullable="false" />
+          <Property Name="warehouse_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bundle_lot" Relationship="inventoryModel.FK_sales_BudleTable" FromRole="sales" ToRole="bundle_lot" />
+          <NavigationProperty Name="customer" Relationship="inventoryModel.FK_sales_CustomerTable" FromRole="sales" ToRole="customers" />
+          <NavigationProperty Name="product" Relationship="inventoryModel.FK_sales_productsTable" FromRole="sales" ToRole="products" />
+          <NavigationProperty Name="tax" Relationship="inventoryModel.FK_sales_TaxTable" FromRole="sales" ToRole="tax" />
+          <NavigationProperty Name="warehouse" Relationship="inventoryModel.FK_sales_WarehouseTable" FromRole="sales" ToRole="warehouses" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="company" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="adress" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="postal_code" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="details" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="purchases" Relationship="inventoryModel.FK_purchases_supplier" FromRole="suppliers" ToRole="purchases" />
+        </EntityType>
+        <EntityType Name="tax">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="rate" Type="Double" Nullable="false" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="tax_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="products" Relationship="inventoryModel.FK_products_tax" FromRole="tax" ToRole="products" />
+          <NavigationProperty Name="sales" Relationship="inventoryModel.FK_sales_TaxTable" FromRole="tax" ToRole="sales" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="user_type" Type="Int32" Nullable="false" />
+          <Property Name="active" Type="Int32" Nullable="false" />
+          <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Conformation_password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="user_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="warehouse">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="damaged_products" Relationship="inventoryModel.FK_damaged_products_warehouse" FromRole="warehouses" ToRole="damaged_products" />
+          <NavigationProperty Name="purchases" Relationship="inventoryModel.FK_purchases_warehouse" FromRole="warehouses" ToRole="purchases" />
+          <NavigationProperty Name="sales" Relationship="inventoryModel.FK_sales_WarehouseTable" FromRole="warehouses" ToRole="sales" />
+        </EntityType>
+        <Association Name="FK_purchases_bundleTable">
+          <End Role="bundle_lot" Type="inventoryModel.bundle_lot" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bundle_lot">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="bundle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_BudleTable">
+          <End Role="bundle_lot" Type="inventoryModel.bundle_lot" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bundle_lot">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="bundle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_categories_categories">
+          <End Role="categories" Type="inventoryModel.category" Multiplicity="1" />
+          <End Role="categories1" Type="inventoryModel.category" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="categories1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_products_categories">
+          <End Role="categories" Type="inventoryModel.category" Multiplicity="1" />
+          <End Role="products" Type="inventoryModel.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_CustomerTable">
+          <End Role="customers" Type="inventoryModel.customer" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_damaged_products_productsTable">
+          <End Role="products" Type="inventoryModel.product" Multiplicity="1" />
+          <End Role="damaged_products" Type="inventoryModel.damaged_products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="damaged_products">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_damaged_products_warehouse">
+          <End Role="warehouses" Type="inventoryModel.warehouse" Multiplicity="1" />
+          <End Role="damaged_products" Type="inventoryModel.damaged_products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouses">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="damaged_products">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_products_tax">
+          <End Role="tax" Type="inventoryModel.tax" Multiplicity="1" />
+          <End Role="products" Type="inventoryModel.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tax">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="products">
+              <PropertyRef Name="tax_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_ProductTable">
+          <End Role="products" Type="inventoryModel.product" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_productsTable">
+          <End Role="products" Type="inventoryModel.product" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_supplier">
+          <End Role="suppliers" Type="inventoryModel.supplier" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="suppliers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="supplier_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_purchases_warehouse">
+          <End Role="warehouses" Type="inventoryModel.warehouse" Multiplicity="1" />
+          <End Role="purchases" Type="inventoryModel.purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouses">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="purchases">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_TaxTable">
+          <End Role="tax" Type="inventoryModel.tax" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tax">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="tax_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sales_WarehouseTable">
+          <End Role="warehouses" Type="inventoryModel.warehouse" Multiplicity="1" />
+          <End Role="sales" Type="inventoryModel.sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="warehouses">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="sales">
+              <PropertyRef Name="warehouse_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="inventoryModelStoreContainer" CdmEntityContainer="InventoryDBContext">
+          <EntitySetMapping Name="bundle_lot">
+            <EntityTypeMapping TypeName="inventoryModel.bundle_lot">
+              <MappingFragment StoreEntitySet="bundle_lot">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="bundle_name" ColumnName="bundle_name" />
+                <ScalarProperty Name="des" ColumnName="des" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="inventoryModel.category">
+              <MappingFragment StoreEntitySet="categories">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="inventoryModel.customer">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="details" ColumnName="details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="damaged_products">
+            <EntityTypeMapping TypeName="inventoryModel.damaged_products">
+              <MappingFragment StoreEntitySet="damaged_products">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+                <ScalarProperty Name="damage_details" ColumnName="damage_details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="inventoryModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="alert_quantity" ColumnName="alert_quantity" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+                <ScalarProperty Name="details" ColumnName="details" />
+                <ScalarProperty Name="stock_quantity" ColumnName="stock_quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchases">
+            <EntityTypeMapping TypeName="inventoryModel.purchase">
+              <MappingFragment StoreEntitySet="purchases">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="pur_date" ColumnName="pur_date" />
+                <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+                <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sales">
+            <EntityTypeMapping TypeName="inventoryModel.sale">
+              <MappingFragment StoreEntitySet="sales">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+                <ScalarProperty Name="sell_date" ColumnName="sell_date" />
+                <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+                <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suppliers">
+            <EntityTypeMapping TypeName="inventoryModel.supplier">
+              <MappingFragment StoreEntitySet="suppliers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+                <ScalarProperty Name="details" ColumnName="details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="taxes">
+            <EntityTypeMapping TypeName="inventoryModel.tax">
+              <MappingFragment StoreEntitySet="tax">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="inventoryModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="Conformation_password" ColumnName="Conformation_password" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehouses">
+            <EntityTypeMapping TypeName="inventoryModel.warehouse">
+              <MappingFragment StoreEntitySet="warehouses">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

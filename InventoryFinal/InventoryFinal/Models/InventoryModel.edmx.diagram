@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a10845cb7e54bc1855bef4e9ae97b38" Name="Diagram1">
+        <EntityTypeShape EntityType="inventoryModel.bundle_lot" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.category" Width="1.5" PointX="1.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.customer" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.damaged_products" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.product" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.purchase" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.sale" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.supplier" Width="1.5" PointX="3.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.tax" Width="1.5" PointX="1.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.user" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="inventoryModel.warehouse" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="inventoryModel.FK_purchases_bundleTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_sales_BudleTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_categories_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_products_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_sales_CustomerTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_damaged_products_productsTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_damaged_products_warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_products_tax" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_purchases_ProductTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_sales_productsTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_purchases_supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_purchases_warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_sales_TaxTable" ManuallyRouted="false" />
+        <AssociationConnector Association="inventoryModel.FK_sales_WarehouseTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

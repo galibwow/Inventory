@@ -1,0 +1,385 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script type="text/javascript">
+        try { if (!window.CloudFlare) { var CloudFlare = [{ verbose: 0, p: 1418273546, byc: 0, owlid: "cf", bag2: 1, mirage2: 0, oracle: 0, paths: { cloudflare: "/cdn-cgi/nexp/dok2v=1613a3a185/" }, atok: "cc645f1290f0b522073be2fe5330f65a", petok: "22f8937d990f0a4650f307fe15d635c31dab3cf4-1419075123-1800", zone: "revox.io", rocket: "0", apps: {} }]; CloudFlare.push({ "apps": { "ape": "6acdb7ffbb346e532ea5f5793315c212" } }); !function (a, b) { a = document.createElement("script"), b = document.getElementsByTagName("script")[0], a.async = !0, a.src = "../../ajax.cloudflare.com/cdn-cgi/nexp/dok2v%3d919620257c/cloudflare.min.js", b.parentNode.insertBefore(a, b) }() } } catch (e) { };
+    </script>
+
+
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/pace/pace-theme-flash.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/boostrapv3/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/font-awesome/css/font-awesome.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/jquery-scrollbar/jquery.scrollbar.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/bootstrap-select2/select2.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/switchery/css/switchery.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/pages/css/pages-icons.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/nv.d3.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/mapplic/css/mapplic.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/rickshaw/rickshaw.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/assets/plugins/jquery-metrojs/MetroJs.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/MyContent/pages/css/pages.css")" class="main-stylesheet" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        window.onload = function () {
+            // fix for windows 8
+            if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+                document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="~/Content/MyContent/pages/css/windows.chrome.fix.css" />'
+        }
+    </script>
+</head>
+<body class="fixed-header   ">
+
+    <nav class="page-sidebar" data-pages="sidebar">
+
+        <div class="sidebar-header">
+            <img class="brand" src="~/Content/MyContent/assets/inventory_logo1.png" alt="logo" width="50%" height="50%" />
+            <div class="sidebar-header-controls">
+                <button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar">
+                    <i class="fa fs-12"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="sidebar-menu">
+
+            <ul class="menu-items">
+                <li class="m-t-30 ">
+                    <a href="#" class="detailed">
+                        <span class="title">Dashboard</span>
+                    </a>
+                    <span class="icon-thumbnail bg-success"><i class="pg-home"></i></span>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">User</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Us</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="@Url.Action("Create","User")">Add a New User</a>
+                            <span class="icon-thumbnail">NU</span>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("ViewUser","User")">Manaage User</a>
+                            <span class="icon-thumbnail">MU</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">People</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Pe</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="@Url.Action("Create","Supplier")">Add a New Supplier</a>
+                            <span class="icon-thumbnail">NS</span>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("Viewsupplier","Supplier")">Manaage Supplier</a>
+                            <span class="icon-thumbnail">MS</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Add a New Customer</a>
+                            <span class="icon-thumbnail">NC</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Manage Customer</a>
+                            <span class="icon-thumbnail">MC</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Product</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Pr</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="@Url.Action("Create","Product")">Add a New Product</a>
+                            <span class="icon-thumbnail">NP</span>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("ViewProduct","Product")">Manaage Product</a>
+                            <span class="icon-thumbnail">MP</span>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("Create","Category")">Add a New Category</a>
+                            <span class="icon-thumbnail">NP</span>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("ViewCategory","Category")">Manage Category</a>
+                            <span class="icon-thumbnail">MC</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Show Product Alerts</a>
+                            <span class="icon-thumbnail">PA</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Tax Rate</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Tr</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="@Url.Action("Create","Tax")">New Tax Type</a>
+                            <span class="icon-thumbnail">TT</span>
+                        </li>
+                        <li class="">
+                            <a href="@Url.Action("ViewTax","Tax")">Manaage Tax </a>
+                            <span class="icon-thumbnail">MT</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Purchase</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Pc</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#">Purchase Products</a>
+                            <span class="icon-thumbnail">PP</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Manaage Purchases</a>
+                            <span class="icon-thumbnail">MP</span>
+                        </li>
+                        <li class="">
+                            <a href="#">List All Purchase</a>
+                            <span class="icon-thumbnail">AP</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Sales</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">US</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#">Sell Product</a>
+                            <span class="icon-thumbnail">SP</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Manaage Sales</a>
+                            <span class="icon-thumbnail">MS</span>
+                        </li>
+                        <li class="">
+                            <a href="#">List All Sales</a>
+                            <span class="icon-thumbnail">AS</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Warehouse and Transfer</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Wt</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#">Add a New Warehouse</a>
+                            <span class="icon-thumbnail">NW</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Manaage Warehouse</a>
+                            <span class="icon-thumbnail">MW</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Transfer Product</a>
+                            <span class="icon-thumbnail">TP</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <span class="title">Report</span>
+                        <span class=" arrow"></span>
+                    </a>
+                    <span class="icon-thumbnail">Re</span>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#">Show Sales Report by Date</a>
+                            <span class="icon-thumbnail">SR</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Show Parchase Report by Date</a>
+                            <span class="icon-thumbnail">PR</span>
+                        </li>
+                        <li class="">
+                            <a href="#">Show Profit & Loss</a>
+                            <span class="icon-thumbnail">PL</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+
+    </nav>
+
+
+
+    <div class="page-container">
+
+        <div class="header ">
+
+
+            <div class="pull-left full-height visible-sm visible-xs">
+
+                <div class="sm-action-bar">
+                    <a href="#" class="btn-link toggle-sidebar" data-toggle="sidebar">
+                        <span class="icon-set menu-hambuger"></span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pull-right full-height visible-sm visible-xs">
+
+                <div class="sm-action-bar">
+                    <a href="#" class="btn-link" data-toggle="quickview" data-toggle-element="#quickview">
+                        <span class="fs-14 pg-power"></span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class=" pull-left sm-table">
+                <div class="header-inner">
+                    <div class="brand inline">
+                        <img src="~/Content/MyContent/assets/inventory_logo2.png" alt="logo" width="50%" height="50%" />
+                    </div>
+                    <a href="#" class="search-link" data-toggle="search"><i class="pg-search"></i>Type anywhere to <span class="bold">search</span></a>
+                </div>
+            </div>
+            <div class=" pull-right">
+                <div class="visible-lg visible-md m-t-10">
+                    <div class="thumbnail-wrapper d32 circular inline m-t-5">
+                        <img src="#" alt="" data-src="#" data-src-retina="#" width="32" height="32">
+                    </div>
+                    <div class="pull-left p-r-10 p-t-10 fs-16 font-heading">
+                        <span class="semi-bold">@ViewBag.Name</span>
+                    </div>
+                    <div class="pull-right" align="right" style="padding-top: 1.7%">
+                        <button class="btn btn-default btn-sm  btn-rounded m-r-20"><span class="fs-14 pg-power"><a href="@Url.Action("Index","Login")">Logout</a></span></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="page-content-wrapper">
+
+            <div class="content">
+
+                <div class="jumbotron" data-pages="parallax">
+                    <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
+                        <div class="inner">
+
+                            <ul class="breadcrumb">
+                                <li>
+                                    <p>Demo</p>
+                                </li>
+                                <li>
+                                    <a href="#" class="active">Blank Test Page</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="main">
+                    @RenderBody()
+                </div>
+            </div>
+
+
+            <div class="container-fluid container-fixed-lg footer">
+                <div class="copyright sm-text-center">
+                    <p class="small no-margin pull-left sm-pull-reset">
+                        <span class="hint-text">Copyright © 2014 </span>
+                        <span class="font-montserrat">S.Faizul</span>.
+                        <span class="hint-text">All rights reserved. </span>
+                    </p>
+                    <p class="small no-margin pull-right sm-pull-reset">
+                        <span class="hint-text">Faizul Mustafiz;</span>
+                        <span class="hint-text">Rakib Galib;</span>
+                        <span class="hint-text">Masudur Rahaman;</span>
+                        <span class="hint-text"></span>
+                    </p>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/pace/pace.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery/jquery-1.8.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/modernizr.custom.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-ui/jquery-ui.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/boostrapv3/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery/jquery-easy.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-unveil/jquery.unveil.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-bez/jquery.bez.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-ios-list/jquery.ioslist.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-actual/jquery.actual.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/bootstrap-select2/select2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/classie/classie.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/switchery/js/switchery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/lib/d3.v3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/nv.d3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/src/interactiveLayer.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/src/tooltip.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/src/utils.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/src/models/axis.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/src/models/line.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/nvd3/src/models/lineWithFocusChart.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/mapplic/js/hammer.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/mapplic/js/jquery.mousewheel.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/mapplic/js/mapplic.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/rickshaw/rickshaw.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-metrojs/MetroJs.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/jquery-sparkline/jquery.sparkline.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/skycons/skycons.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/pages/js/pages.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/js/dashboard.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/MyContent/assets/js/scripts.js")" type="text/javascript"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '../../www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-56895490-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+</body>
+</html>

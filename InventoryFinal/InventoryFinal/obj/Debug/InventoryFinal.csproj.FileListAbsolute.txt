@@ -1,0 +1,138 @@
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\InventoryFinal.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\InventoryFinal.pdb
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\EntityFramework.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Infrastructure.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Http.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Razor.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\EntityFramework.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Http.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Razor.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.xml
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.csprojResolveAssemblyReference.cache
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.dll
+c:\users\galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.pdb
+C:\Users\Galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\Antlr3.Runtime.dll
+C:\Users\Galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Mvc.dll
+C:\Users\Galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\System.Web.Optimization.dll
+C:\Users\Galib\documents\visual studio 2012\Projects\InventoryFinal\InventoryFinal\bin\WebGrease.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.pdb
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.csprojResolveAssemblyReference.cache
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\InventoryFinal.dll.config
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\InventoryFinal.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\InventoryFinal.pdb
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\Antlr3.Runtime.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Mvc.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Optimization.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Razor.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\WebGrease.dll
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Razor.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\faizul\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\InventoryFinal.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\InventoryFinal.pdb
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\Antlr3.Runtime.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Mvc.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Optimization.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Razor.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\WebGrease.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.Razor.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.dll
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.pdb
+C:\Users\Galib\Desktop\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.csprojResolveAssemblyReference.cache
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\InventoryFinal.dll.config
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\InventoryFinal.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\InventoryFinal.pdb
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\Antlr3.Runtime.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\EntityFramework.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\Microsoft.Web.Mvc.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Http.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Optimization.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Razor.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\WebGrease.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\EntityFramework.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\Newtonsoft.Json.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Net.Http.Formatting.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Helpers.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Http.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Http.WebHost.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Mvc.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.Razor.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.csprojResolveAssemblyReference.cache
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.dll
+C:\Users\Galib\Dropbox\InventoryFinal\InventoryFinal\obj\Debug\InventoryFinal.pdb

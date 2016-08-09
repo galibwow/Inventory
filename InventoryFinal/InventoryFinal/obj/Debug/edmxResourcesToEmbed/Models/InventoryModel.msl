@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="inventoryModelStoreContainer" CdmEntityContainer="InventoryDBContext">
+    <EntitySetMapping Name="bundle_lot">
+      <EntityTypeMapping TypeName="inventoryModel.bundle_lot">
+        <MappingFragment StoreEntitySet="bundle_lot">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="bundle_name" ColumnName="bundle_name" />
+          <ScalarProperty Name="des" ColumnName="des" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="inventoryModel.category">
+        <MappingFragment StoreEntitySet="categories">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="inventoryModel.customer">
+        <MappingFragment StoreEntitySet="customers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="details" ColumnName="details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="damaged_products">
+      <EntityTypeMapping TypeName="inventoryModel.damaged_products">
+        <MappingFragment StoreEntitySet="damaged_products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="damage_details" ColumnName="damage_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="inventoryModel.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="unit" ColumnName="unit" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="alert_quantity" ColumnName="alert_quantity" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="details" ColumnName="details" />
+          <ScalarProperty Name="stock_quantity" ColumnName="stock_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchases">
+      <EntityTypeMapping TypeName="inventoryModel.purchase">
+        <MappingFragment StoreEntitySet="purchases">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="pur_date" ColumnName="pur_date" />
+          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sales">
+      <EntityTypeMapping TypeName="inventoryModel.sale">
+        <MappingFragment StoreEntitySet="sales">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="sell_date" ColumnName="sell_date" />
+          <ScalarProperty Name="bundle_id" ColumnName="bundle_id" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers">
+      <EntityTypeMapping TypeName="inventoryModel.supplier">
+        <MappingFragment StoreEntitySet="suppliers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="details" ColumnName="details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taxes">
+      <EntityTypeMapping TypeName="inventoryModel.tax">
+        <MappingFragment StoreEntitySet="tax">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="inventoryModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="Conformation_password" ColumnName="Conformation_password" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="warehouses">
+      <EntityTypeMapping TypeName="inventoryModel.warehouse">
+        <MappingFragment StoreEntitySet="warehouses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
